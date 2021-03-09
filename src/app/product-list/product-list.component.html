@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Liste des produits</h2>
+    <div class="list-group">
+      <button
+        class="list-group-item border"
+        *ngFor="let product of products; let i = index"
+        (click)="onProductDetailView(i)">
+        <h3 class="list-group-item-heading">
+          {{ product.name }}
+          <button class="btn btn-default pull-right" (click)="onDeleteProduct(product)">
+            <span class="glyphicon glyphicon-minus"></span>
+          </button>
+        </h3>
+        <p class="list-group-item-text">
+          {{ product.description }}
+        </p>
+      </button>
+    </div>
+    <button class="btn btn-primary" (click)="onNewProduct()">Nouveau produit</button>
+  </div>
+</div>
